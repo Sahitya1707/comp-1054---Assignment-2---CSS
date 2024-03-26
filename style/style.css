@@ -1,0 +1,197 @@
+/* Imported font */
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Protest+Riot&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Ultra&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/* editing header */
+#container {
+  width: 80vw;
+  height: 99vh;
+
+  margin: 1rem auto;
+  padding: 2rem 1rem;
+  /* border: 2px solid black; */
+}
+header {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0 0 0 1rem;
+  font-family: "Merriweather", serif;
+}
+header h1 {
+  color: rgb(255, 42, 0);
+  text-transform: lowercase;
+  font-size: 5rem;
+  font-weight: 100;
+}
+header p {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.6rem;
+}
+/* Applying grid */
+/* You can use this website to learn more about grid https://www.joshwcomeau.com/css/interactive-guide-to-grid/ */
+main {
+  display: grid;
+  grid-template-columns: 30% 30%;
+  gap: 10px 20px;
+  margin-top: 2rem;
+  grid-template-rows: 30vh 30vh 30vh;
+}
+/* selecting first article with image */
+main aside:first-of-type {
+  grid-row: 1/3;
+  grid-column: 1;
+}
+main aside:first-of-type figure {
+  position: relative;
+  height: 100%;
+  /* width: 20%; */
+}
+
+/* I can directly select the image but i tend to go this way here */
+main aside:first-of-type figure img {
+  /* position: absolute;
+  top: 0;
+  right: 0; */
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+/* Selecting figure caption */
+aside:first-of-type figure figcaption p:first-of-type {
+  position: absolute;
+  z-index: 100;
+  bottom: 5rem;
+  right: 3rem;
+}
+aside:first-of-type figure figcaption p:first-of-type {
+  color: white;
+}
+aside:first-of-type figure figcaption p:first-child em {
+  display: block;
+  font-size: 4rem;
+}
+/* selecting second child p */
+aside:first-of-type figure figcaption p:nth-child(2) {
+  /* making text verticla using the given sytax below */
+  writing-mode: vertical-rl;
+  /* transform has been used to rotate the text by whole 180 */
+  transform: scale(-1);
+  /* position: absolute; */
+  position: absolute;
+  /* right: 31rem; */
+  /* left: 0; */
+  bottom: -12em;
+  left: -2rem;
+  font-weight: lighter;
+  font-size: uppercase;
+}
+
+main aside:last-of-type {
+  grid-row: 3;
+  grid-column: 1;
+  margin: 0 1rem;
+  padding: 1rem 2rem;
+  border: 1px solid red;
+  font-weight: bold;
+
+  font-size: 0.9rem;
+}
+
+/* Styling all h2 */
+
+h2 {
+  font-family: "Merriweather", serif;
+  text-transform: lowercase;
+
+  font-size: 2rem;
+}
+main aside:last-of-type em {
+  text-transform: uppercase;
+  display: block;
+  /* font-family: "Ubuntu", sans-serif; */
+  font-size: 1rem;
+  font-style: normal;
+}
+main aside:last-of-type ol {
+  padding: 0 0 0 2rem;
+}
+main aside:last-of-type ol li {
+  margin-top: 0.5em;
+}
+
+/* now adding css to all the sections */
+main section {
+  /* position has been set to relative cause we need to get the background line top of the h2 in each section */
+  position: relative;
+}
+/* Added content to before all h2  */
+section h2::before {
+  content: "";
+  position: absolute;
+  height: 1rem;
+  top: -1rem;
+
+  width: 10rem;
+}
+
+/* styling all ol of section element */
+main section:nth-of-type(1) ol,
+main section:nth-of-type(2) ol,
+main section:nth-of-type(3) ol {
+  font-size: 0.9rem;
+  padding: 0 0rem 0rem 2.5rem;
+}
+/* Adding style to all the item */
+main section:nth-of-type(1) ol li,
+main section:nth-of-type(2) ol li,
+main section:nth-of-type(3) ol li {
+  padding: 0.2rem 0 0 0;
+}
+
+main section:nth-of-type(1) ol li h3,
+main section:nth-of-type(2) ol li h3,
+main section:nth-of-type(3) ol li h3 {
+  font-size: bold;
+  display: inline;
+}
+main section:nth-of-type(1) ol li p,
+main section:nth-of-type(2) ol li p,
+main section:nth-of-type(3) ol li p {
+  display: inline;
+}
+/* Styling first section
+*/
+main section:nth-of-type(1) ol li h3 {
+  color: rgb(4, 109, 4);
+}
+/* section first section */
+main section:nth-of-type(1) h2::before {
+  background-color: rgb(4, 109, 4);
+  /* color: red; */
+}
+/* Styling second section
+*/
+main section:nth-of-type(2) ol li h3 {
+  color: rgb(223, 7, 126);
+}
+/* section second section */
+main section:nth-of-type(2) h2::before {
+  background-color: rgb(223, 7, 126);
+  /* color: red; */
+}
+/* Styling third section
+*/
+main section:nth-of-type(3) ol li h3 {
+  color: rgb(0, 89, 255);
+}
+/* section third section */
+main section:nth-of-type(3) h2::before {
+  background-color: rgb(0, 89, 255);
+  /* color: red; */
+}
