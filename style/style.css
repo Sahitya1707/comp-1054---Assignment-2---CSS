@@ -1,4 +1,6 @@
 /* Imported font */
+
+/* this assignment will look same as assignment when the width is of 1760px  */
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Protest+Riot&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Ultra&display=swap");
 * {
   margin: 0;
@@ -21,6 +23,8 @@ header {
   flex-direction: column-reverse;
   padding: 0 0 0 1rem;
   font-family: "Merriweather", serif;
+  /* align-items: center; */
+  margin-left: 15rem;
 }
 header h1 {
   color: rgb(255, 42, 0);
@@ -38,9 +42,11 @@ header p {
 main {
   display: grid;
   grid-template-columns: 30% 30%;
+  place-items: center;
+  justify-content: center;
   gap: 10px 20px;
   margin-top: 2rem;
-  grid-template-rows: 30vh 30vh 30vh;
+  grid-template-rows: auto auto auto;
 }
 /* selecting first article with image */
 main aside:first-of-type {
@@ -194,4 +200,21 @@ main section:nth-of-type(3) ol li h3 {
 main section:nth-of-type(3) h2::before {
   background-color: rgb(0, 89, 255);
   /* color: red; */
+}
+
+footer p {
+  text-align: right;
+  margin-top: 2rem;
+  margin-right: 17rem;
+  text-transform: uppercase;
+  color: grey;
+}
+footer p small em {
+  color: rgb(255, 123, 0);
+  font-weight: bolder;
+  font-size: 1rem;
+}
+footer p small strong {
+  font-weight: bold;
+  margin: 0 0.5rem;
 }
